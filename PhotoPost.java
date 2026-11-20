@@ -10,8 +10,8 @@ import java.util.ArrayList;
  */
 public class PhotoPost extends Post
 {
-    private String filename;  // the name of the image file
-    private String caption;   // a one line image caption
+    protected String filename;  // the name of the image file
+    protected String caption;   // a one line image caption
 
     /**
      * Constructor for objects of class PhotoPost.
@@ -45,5 +45,31 @@ public class PhotoPost extends Post
     public String getCaption()
     {
         return caption;
+    }
+    
+    /**
+     * Display the details of this post.
+     * 
+     * (Currently: Print to the text terminal. This is simulating display 
+     * in a web browser for now.)
+     */
+    public void display()
+    {
+        System.out.println(username);
+        //System.out.print(timeString(timestamp));
+        
+        if(likes > 0) {
+            System.out.println("  -  " + likes + " people like this.");
+        }
+        else {
+            System.out.println();
+        }
+        
+        if(comments.isEmpty()) {
+            System.out.println("   No comments.");
+        }
+        else {
+            System.out.println("   " + comments.size() + " comment(s). Click here to view.");
+        }
     }
 }

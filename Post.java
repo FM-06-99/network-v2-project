@@ -10,10 +10,10 @@ import java.util.ArrayList;
  */
 public class Post 
 {
-    private String username;  // username of the post's author
-    private long timestamp;
-    private int likes;
-    private ArrayList<String> comments;
+    protected String username;  // username of the post's author Q5
+    protected long timestamp;
+    protected int likes;
+    protected ArrayList<String> comments;
 
     /**
      * Constructor for objects of class Post.
@@ -65,33 +65,11 @@ public class Post
     {
         return timestamp;
     }
-
-    /**
-     * Display the details of this post.
-     * 
-     * (Currently: Print to the text terminal. This is simulating display 
-     * in a web browser for now.)
-     */
+    
     public void display()
     {
-        System.out.println(username);
-        System.out.print(timeString(timestamp));
-        
-        if(likes > 0) {
-            System.out.println("  -  " + likes + " people like this.");
-        }
-        else {
-            System.out.println();
-        }
-        
-        if(comments.isEmpty()) {
-            System.out.println("   No comments.");
-        }
-        else {
-            System.out.println("   " + comments.size() + " comment(s). Click here to view.");
-        }
+        //System.out.println(caption); //Q10
     }
-    
     /**
      * Create a string describing a time point in the past in terms 
      * relative to current time, such as "30 seconds ago" or "7 minutes ago".

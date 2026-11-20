@@ -33,4 +33,34 @@ public class MessagePost extends Post
     {
         return message;
     }
-}
+
+    public void printShortSummery(){
+        System.out.println("message post from" + username);//Q5
+    }
+    
+    /**
+     * Display the details of this post.
+     * 
+     * (Currently: Print to the text terminal. This is simulating display 
+     * in a web browser for now.)
+     */
+    public void display()
+    {
+        System.out.println(username);
+        //System.out.print(timeString(timestamp));
+        
+        if(likes > 0) {
+            System.out.println("  -  " + likes + " people like this.");
+        }
+        else {
+            System.out.println();
+        }
+        
+        if(comments.isEmpty()) {
+            System.out.println("   No comments.");
+        }
+        else {
+            System.out.println("   " + comments.size() + " comment(s). Click here to view.");
+        }
+    }
+}    
